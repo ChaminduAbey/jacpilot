@@ -10,10 +10,15 @@ def create_python_script(user_request: str) -> File byllm();
 
 walker UpdateFile {
     can update_file with File entry {
-        with open(here.file_name, 'w') as f  {
+        with open("./workplace/" + here.file_name, 'w') as f  {
             f.write(here.file_content);
         }
     }
+}
+
+
+walker FindFile {
+    can find_files with `root entry { }
 }
 
 
@@ -26,7 +31,6 @@ node File {
 with entry {
     print("Welcome to Jac Pilot");
     user_request = input("Please write what you want done : ");
-    print(user_request);
     file = create_python_script(user_request);
     UpdateFile() spawn file;
 }
