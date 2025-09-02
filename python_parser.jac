@@ -34,10 +34,10 @@ obj PythonParser {
             );
         }
         # print(printgraph(node=project_node));
-         # with open("example.gv", "w") as f  {
-         #     # f.write(printgraph(node=project_node));
-         # }
-         return project_node;
+         with open("dependencies.gv", "w") as f  {
+            f.write(printgraph(node=project_node));
+        }
+        return project_node;
     }
 
     def build_references_graph(
