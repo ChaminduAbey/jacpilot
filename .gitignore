@@ -2,3 +2,4 @@ jac-env/
 .env
 # the place where agent does its work
 workplace/ 
+aider/
