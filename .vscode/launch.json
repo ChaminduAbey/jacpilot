@@ -10,7 +10,7 @@
                 "run",
                 "main.jac"
             ],
-            "console": "internalConsole"
+            "console": "integratedTerminal"
         }
     ]
 }

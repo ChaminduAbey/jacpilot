@@ -33,11 +33,11 @@ obj PythonParser {
                 project_node=project_node
             );
         }
-        print(printgraph(node=project_node));
-        with open("example.gv", "w") as f  {
-            f.write(printgraph(node=project_node));
-        }
-        return project_node;
+        # print(printgraph(node=project_node));
+         # with open("example.gv", "w") as f  {
+         #     # f.write(printgraph(node=project_node));
+         # }
+         return project_node;
     }
 
     def build_references_graph(
@@ -70,7 +70,7 @@ obj PythonParser {
                 if (reference_node) {
                     reference_node +>: Calls :+> parent_node;
                 } else {
-                    print("Reference not found", reference_node);
+                    # print("Reference not found", reference_node);
                     self.find_reference_node(
                         parent_node=r_file_node,
                         column=r.column - 1,
@@ -150,10 +150,7 @@ obj PythonParser {
 }
 
 
-# obj
- # obj CallEdgesAdder {
- # }
- obj ConvertFileToJACGraph {
+obj ConvertFileToJACGraph {
     has : priv src: bytes;
     has : priv root_node: TSNode;
     has file: FileNode = None;
@@ -218,6 +215,16 @@ obj PythonParser {
                     self.get_childtype_node("block", child.children)
                 );
             } else {
+                # print("----");
+                # print(
+                #     "unknown nodetype found in build_tree",
+                #     child.type
+                # );
+                # print('unknown children', child.children);
+                # print("----");
+                # obj
+                # obj CallEdgesAdder {
+                # }
                 # print("----");
                 # print(
                 #     "unknown nodetype found in build_tree",
